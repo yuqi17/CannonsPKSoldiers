@@ -10,10 +10,10 @@
 		2C669F8F1D20132A0081D6D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669F8E1D20132A0081D6D4 /* AppDelegate.swift */; };
 		2C669F961D20132A0081D6D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C669F951D20132A0081D6D4 /* Assets.xcassets */; };
 		2C669F991D20132A0081D6D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C669F971D20132A0081D6D4 /* LaunchScreen.storyboard */; };
-		2C669FAC1D2013650081D6D4 /* ChessBoradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FA61D2013650081D6D4 /* ChessBoradView.swift */; };
-		2C669FAE1D2013650081D6D4 /* ChessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FA81D2013650081D6D4 /* ChessViewController.swift */; };
-		2C669FAF1D2013650081D6D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FA91D2013650081D6D4 /* Player.swift */; };
 		2C669FB01D2013650081D6D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C669FAB1D2013650081D6D4 /* Main.storyboard */; };
+		2C669FE01D2017020081D6D4 /* ChessBoradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FDF1D2017020081D6D4 /* ChessBoradView.swift */; };
+		2C669FE21D2017210081D6D4 /* ChessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FE11D2017210081D6D4 /* ChessViewController.swift */; };
+		2C669FE41D2017560081D6D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FE31D2017560081D6D4 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,10 +125,10 @@
 		2C669F9A1D20132A0081D6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EVReflection.xcodeproj; path = "/Users/johnson/Documents/ios_workplace/ChessDemo/ChessDemo/../../../../Downloads/EVReflection-master/EVReflection/EVReflection.xcodeproj"; sourceTree = "<absolute>"; };
 		2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftWebSocket.xcodeproj; path = "/Users/johnson/Documents/ios_workplace/ChessDemo/ChessDemo/../../../../Downloads/SwiftWebSocket-master/SwiftWebSocket.xcodeproj"; sourceTree = "<absolute>"; };
-		2C669FA61D2013650081D6D4 /* ChessBoradView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChessBoradView.swift; path = ../../ChessDemo/ChessDemo/ChessBoradView.swift; sourceTree = "<group>"; };
-		2C669FA81D2013650081D6D4 /* ChessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChessViewController.swift; path = ../../ChessDemo/ChessDemo/ChessViewController.swift; sourceTree = "<group>"; };
-		2C669FA91D2013650081D6D4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../../ChessDemo/ChessDemo/Player.swift; sourceTree = "<group>"; };
 		2C669FAA1D2013650081D6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C669FDF1D2017020081D6D4 /* ChessBoradView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoradView.swift; sourceTree = "<group>"; };
+		2C669FE11D2017210081D6D4 /* ChessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessViewController.swift; sourceTree = "<group>"; };
+		2C669FE31D2017560081D6D4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,9 +163,9 @@
 			children = (
 				2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */,
 				2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */,
-				2C669FA61D2013650081D6D4 /* ChessBoradView.swift */,
-				2C669FA81D2013650081D6D4 /* ChessViewController.swift */,
-				2C669FA91D2013650081D6D4 /* Player.swift */,
+				2C669FDF1D2017020081D6D4 /* ChessBoradView.swift */,
+				2C669FE31D2017560081D6D4 /* Player.swift */,
+				2C669FE11D2017210081D6D4 /* ChessViewController.swift */,
 				2C669FAB1D2013650081D6D4 /* Main.storyboard */,
 				2C669F8E1D20132A0081D6D4 /* AppDelegate.swift */,
 				2C669F951D20132A0081D6D4 /* Assets.xcassets */,
@@ -386,10 +386,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C669FAE1D2013650081D6D4 /* ChessViewController.swift in Sources */,
-				2C669FAC1D2013650081D6D4 /* ChessBoradView.swift in Sources */,
-				2C669FAF1D2013650081D6D4 /* Player.swift in Sources */,
+				2C669FE01D2017020081D6D4 /* ChessBoradView.swift in Sources */,
 				2C669F8F1D20132A0081D6D4 /* AppDelegate.swift in Sources */,
+				2C669FE41D2017560081D6D4 /* Player.swift in Sources */,
+				2C669FE21D2017210081D6D4 /* ChessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
