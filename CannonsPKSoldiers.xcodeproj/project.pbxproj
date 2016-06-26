@@ -8,20 +8,127 @@
 
 /* Begin PBXBuildFile section */
 		2C669F8F1D20132A0081D6D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669F8E1D20132A0081D6D4 /* AppDelegate.swift */; };
-		2C669F911D20132A0081D6D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669F901D20132A0081D6D4 /* ViewController.swift */; };
-		2C669F941D20132A0081D6D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C669F921D20132A0081D6D4 /* Main.storyboard */; };
 		2C669F961D20132A0081D6D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C669F951D20132A0081D6D4 /* Assets.xcassets */; };
 		2C669F991D20132A0081D6D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C669F971D20132A0081D6D4 /* LaunchScreen.storyboard */; };
+		2C669FAC1D2013650081D6D4 /* ChessBoradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FA61D2013650081D6D4 /* ChessBoradView.swift */; };
+		2C669FAE1D2013650081D6D4 /* ChessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FA81D2013650081D6D4 /* ChessViewController.swift */; };
+		2C669FAF1D2013650081D6D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C669FA91D2013650081D6D4 /* Player.swift */; };
+		2C669FB01D2013650081D6D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C669FAB1D2013650081D6D4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C669FB91D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7FD67D821C2882320071234B;
+			remoteInfo = "EVReflection iOS";
+		};
+		2C669FBB1D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7FD67D831C2882320071234B;
+			remoteInfo = "EVReflection iOS Tests";
+		};
+		2C669FBD1D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7FD67D841C2882320071234B;
+			remoteInfo = "EVReflection OSX";
+		};
+		2C669FBF1D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7FD67D801C28463E0071234B;
+			remoteInfo = "EVReflection OSX Tests";
+		};
+		2C669FC11D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7FD67D851C2882320071234B;
+			remoteInfo = "EVReflection TVOS";
+		};
+		2C669FC31D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7FD67D811C284A2C0071234B;
+			remoteInfo = "EVReflection TVOS Tests";
+		};
+		2C669FC51D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7FD67D8B1C288B560071234B;
+			remoteInfo = "EVReflection WatchOS";
+		};
+		2C669FC71D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7F6C9FB01CB90E6D00F19811;
+			remoteInfo = EVReflectionTestApp;
+		};
+		2C669FCF1D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03D1E7031B20897100AC49AC;
+			remoteInfo = "SwiftWebSocket-iOS";
+		};
+		2C669FD11D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D71949011B35E6130015C529;
+			remoteInfo = "SwiftWebSocket-OSX";
+		};
+		2C669FD31D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03957A3C1C5A71DB005CC1DB;
+			remoteInfo = "SwiftWebSocket-tvOS";
+		};
+		2C669FD51D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03D70CCC1BDAC5EC00D245C3;
+			remoteInfo = "Test-OSX";
+		};
+		2C669FD71D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03D70CDB1BDAC63600D245C3;
+			remoteInfo = "Test-iOS";
+		};
+		2C669FD91D2013650081D6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D78C40301C232C3800EB72AA;
+			remoteInfo = "Test-ObjectiveC";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2C669F8B1D20132A0081D6D4 /* CannonsPKSoldiers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CannonsPKSoldiers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C669F8E1D20132A0081D6D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C669F901D20132A0081D6D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2C669F931D20132A0081D6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C669F951D20132A0081D6D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C669F981D20132A0081D6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C669F9A1D20132A0081D6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EVReflection.xcodeproj; path = "/Users/johnson/Documents/ios_workplace/ChessDemo/ChessDemo/../../../../Downloads/EVReflection-master/EVReflection/EVReflection.xcodeproj"; sourceTree = "<absolute>"; };
+		2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftWebSocket.xcodeproj; path = "/Users/johnson/Documents/ios_workplace/ChessDemo/ChessDemo/../../../../Downloads/SwiftWebSocket-master/SwiftWebSocket.xcodeproj"; sourceTree = "<absolute>"; };
+		2C669FA61D2013650081D6D4 /* ChessBoradView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChessBoradView.swift; path = ../../ChessDemo/ChessDemo/ChessBoradView.swift; sourceTree = "<group>"; };
+		2C669FA81D2013650081D6D4 /* ChessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChessViewController.swift; path = ../../ChessDemo/ChessDemo/ChessViewController.swift; sourceTree = "<group>"; };
+		2C669FA91D2013650081D6D4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../../ChessDemo/ChessDemo/Player.swift; sourceTree = "<group>"; };
+		2C669FAA1D2013650081D6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +161,46 @@
 		2C669F8D1D20132A0081D6D4 /* CannonsPKSoldiers */ = {
 			isa = PBXGroup;
 			children = (
+				2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */,
+				2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */,
+				2C669FA61D2013650081D6D4 /* ChessBoradView.swift */,
+				2C669FA81D2013650081D6D4 /* ChessViewController.swift */,
+				2C669FA91D2013650081D6D4 /* Player.swift */,
+				2C669FAB1D2013650081D6D4 /* Main.storyboard */,
 				2C669F8E1D20132A0081D6D4 /* AppDelegate.swift */,
-				2C669F901D20132A0081D6D4 /* ViewController.swift */,
-				2C669F921D20132A0081D6D4 /* Main.storyboard */,
 				2C669F951D20132A0081D6D4 /* Assets.xcassets */,
 				2C669F971D20132A0081D6D4 /* LaunchScreen.storyboard */,
 				2C669F9A1D20132A0081D6D4 /* Info.plist */,
 			);
 			path = CannonsPKSoldiers;
+			sourceTree = "<group>";
+		};
+		2C669FA11D2013650081D6D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C669FBA1D2013650081D6D4 /* EVReflection.framework */,
+				2C669FBC1D2013650081D6D4 /* EVReflection iOS Tests.xctest */,
+				2C669FBE1D2013650081D6D4 /* EVReflection.framework */,
+				2C669FC01D2013650081D6D4 /* EVReflection OSX Tests.xctest */,
+				2C669FC21D2013650081D6D4 /* EVReflection.framework */,
+				2C669FC41D2013650081D6D4 /* EVReflection TVOS Tests.xctest */,
+				2C669FC61D2013650081D6D4 /* EVReflection.framework */,
+				2C669FC81D2013650081D6D4 /* EVReflectionTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C669FA41D2013650081D6D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C669FD01D2013650081D6D4 /* SwiftWebSocket.framework */,
+				2C669FD21D2013650081D6D4 /* SwiftWebSocket.framework */,
+				2C669FD41D2013650081D6D4 /* SwiftWebSocket.framework */,
+				2C669FD61D2013650081D6D4 /* Test-OSX.xctest */,
+				2C669FD81D2013650081D6D4 /* Test-iOS.xctest */,
+				2C669FDA1D2013650081D6D4 /* Test-ObjectiveC.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +250,16 @@
 			mainGroup = 2C669F821D20132A0081D6D4;
 			productRefGroup = 2C669F8C1D20132A0081D6D4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2C669FA11D2013650081D6D4 /* Products */;
+					ProjectRef = 2C669FA01D2013650081D6D4 /* EVReflection.xcodeproj */;
+				},
+				{
+					ProductGroup = 2C669FA41D2013650081D6D4 /* Products */;
+					ProjectRef = 2C669FA31D2013650081D6D4 /* SwiftWebSocket.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2C669F8A1D20132A0081D6D4 /* CannonsPKSoldiers */,
@@ -118,14 +267,115 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		2C669FBA1D2013650081D6D4 /* EVReflection.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EVReflection.framework;
+			remoteRef = 2C669FB91D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FBC1D2013650081D6D4 /* EVReflection iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "EVReflection iOS Tests.xctest";
+			remoteRef = 2C669FBB1D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FBE1D2013650081D6D4 /* EVReflection.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EVReflection.framework;
+			remoteRef = 2C669FBD1D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FC01D2013650081D6D4 /* EVReflection OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "EVReflection OSX Tests.xctest";
+			remoteRef = 2C669FBF1D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FC21D2013650081D6D4 /* EVReflection.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EVReflection.framework;
+			remoteRef = 2C669FC11D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FC41D2013650081D6D4 /* EVReflection TVOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "EVReflection TVOS Tests.xctest";
+			remoteRef = 2C669FC31D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FC61D2013650081D6D4 /* EVReflection.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EVReflection.framework;
+			remoteRef = 2C669FC51D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FC81D2013650081D6D4 /* EVReflectionTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = EVReflectionTestApp.app;
+			remoteRef = 2C669FC71D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FD01D2013650081D6D4 /* SwiftWebSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftWebSocket.framework;
+			remoteRef = 2C669FCF1D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FD21D2013650081D6D4 /* SwiftWebSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftWebSocket.framework;
+			remoteRef = 2C669FD11D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FD41D2013650081D6D4 /* SwiftWebSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftWebSocket.framework;
+			remoteRef = 2C669FD31D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FD61D2013650081D6D4 /* Test-OSX.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Test-OSX.xctest";
+			remoteRef = 2C669FD51D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FD81D2013650081D6D4 /* Test-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Test-iOS.xctest";
+			remoteRef = 2C669FD71D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C669FDA1D2013650081D6D4 /* Test-ObjectiveC.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Test-ObjectiveC.xctest";
+			remoteRef = 2C669FD91D2013650081D6D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		2C669F891D20132A0081D6D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C669FB01D2013650081D6D4 /* Main.storyboard in Resources */,
 				2C669F991D20132A0081D6D4 /* LaunchScreen.storyboard in Resources */,
 				2C669F961D20132A0081D6D4 /* Assets.xcassets in Resources */,
-				2C669F941D20132A0081D6D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +386,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C669F911D20132A0081D6D4 /* ViewController.swift in Sources */,
+				2C669FAE1D2013650081D6D4 /* ChessViewController.swift in Sources */,
+				2C669FAC1D2013650081D6D4 /* ChessBoradView.swift in Sources */,
+				2C669FAF1D2013650081D6D4 /* Player.swift in Sources */,
 				2C669F8F1D20132A0081D6D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,20 +396,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2C669F921D20132A0081D6D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C669F931D20132A0081D6D4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2C669F971D20132A0081D6D4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2C669F981D20132A0081D6D4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2C669FAB1D2013650081D6D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C669FAA1D2013650081D6D4 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../../ChessDemo/ChessDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
