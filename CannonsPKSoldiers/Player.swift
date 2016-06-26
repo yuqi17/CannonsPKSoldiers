@@ -9,7 +9,7 @@
 import UIKit
 import EVReflection
 
-//棋手角色  1-兵  2-炮
+//棋手角色  1-兵  2-炮   hh
 enum Role :Int{
     case Soldier = 1,Cannon
 }
