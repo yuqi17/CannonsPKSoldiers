@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YWB-OL-QMm">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chess View Controller-->
+        <scene sceneID="nD9-i2-dJD">
+            <objects>
+                <viewController id="YWB-OL-QMm" customClass="ChessViewController" customModule="CannonsPKSoldiers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sbl-8B-egP"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Ac-id-ATP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OtT-3P-Y1S">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-u1-hkp" customClass="ChessBoradView" customModule="CannonsPKSoldiers" customModuleProvider="target">
+                                <rect key="frame" x="20" y="26" width="560" height="345"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="XbJ-91-F6n" appends="YES" id="3tb-gV-bjj"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XfC-u1-hkp" secondAttribute="trailing" id="Nme-IW-ek8"/>
+                            <constraint firstItem="XfC-u1-hkp" firstAttribute="top" secondItem="Sbl-8B-egP" secondAttribute="bottom" constant="6" id="ORo-XD-DNr"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XfC-u1-hkp" secondAttribute="leading" id="ZPZ-D0-TR4"/>
+                            <constraint firstItem="0Ac-id-ATP" firstAttribute="top" relation="lessThanOrEqual" secondItem="XfC-u1-hkp" secondAttribute="bottom" constant="229" id="zSF-wd-gHP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chessBoard" destination="XfC-u1-hkp" id="dZz-79-sIs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYm-z3-qTW" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XbJ-91-F6n">
+                    <connections>
+                        <action selector="tap:" destination="YWB-OL-QMm" id="22p-5q-e9e"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="256" y="235"/>
+        </scene>
+    </scenes>
+</document>
