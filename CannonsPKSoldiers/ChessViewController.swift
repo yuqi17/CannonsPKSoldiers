@@ -70,8 +70,22 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
         //let json = JSON(data: nsdata!)
         
         
-        player = Player(json: string)
-        
+        let firstNew = Player(json: string)
+        if(player == nil)
+        {
+            //身份已经确定
+            player = firstNew
+            
+        }
+        else
+        {
+            player?.ox = firstNew.ox
+            player?.oy = firstNew.oy
+            player?.nx = firstNew.nx
+            player?.ny = firstNew.ny
+            player?.turn = firstNew.turn
+            player?.status = firstNew.status
+        }
         print(string)
         
         //下棋状态
@@ -83,7 +97,7 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
             }
             else if player?.turn == Role.Soldier.rawValue
             {
-                chessArr[lastStep.0][lastStep.1] = 0
+                chessArr[(player?.ox)!][(player?.oy)!] = 0
                 chessArr[(player?.nx)!][(player?.ny)!] = Role.Cannon.rawValue
             }
             
@@ -118,7 +132,7 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
         
         if step == 0 //选中棋子
         {
-            if chessArr[row][column] ==  turn//已经被选中
+            if chessArr[row][column] ==  player?.turn//已经被选中
             {
                 lastStep = (row,column)
                 //print("\(row):\(column) ---> \(chessArr[row][column])")
@@ -251,18 +265,15 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
         //网络发送
         if checkWhoWin() != -1 {
             
-            player?.turn = Role.Soldier.rawValue
-            //turn = 1
-            
-            player?.myWin = checkWhoWin() == player!.prole
-
+            player?.myWin = (checkWhoWin() == player!.prole)
             
             if player!.myWin {
+                player?.status = 3
+                player?.turn = Role.Soldier.rawValue
                 ws.send(text: player!.toJsonString())
             }
             
             showMessage(player!.myWin)
-            
         }
         
         
@@ -277,31 +288,31 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
         let okAction = UIAlertAction(title: "确 定", style: UIAlertActionStyle.Default) {
             action in
             
-            if self.checkWhoWin() == Role.Cannon.rawValue
-            {
-                self.chessArr = [
-                    [1,1,1,1,1,1],
-                    [1,1,1,1,1,1],
-                    [1,1,1,1,1,1],
-                    [0,0,0,0,0,0],
-                    [0,2,0,0,2,0],
-                    [0,0,0,0,0,0]
-                ]
-                
-            }
-            else
-            {
-                self.chessArr = [
-                    [0,0,0,0,0,0],
-                    [0,2,0,0,2,0],
-                    [0,0,0,0,0,0],
-                    [1,1,1,1,1,1],
-                    [1,1,1,1,1,1],
-                    [1,1,1,1,1,1]
-                ]
-            }
-            
-            self.chessBoard.setNeedsDisplay()
+//            if self.checkWhoWin() == Role.Cannon.rawValue
+//            {
+//                self.chessArr = [
+//                    [1,1,1,1,1,1],
+//                    [1,1,1,1,1,1],
+//                    [1,1,1,1,1,1],
+//                    [0,0,0,0,0,0],
+//                    [0,2,0,0,2,0],
+//                    [0,0,0,0,0,0]
+//                ]
+//                
+//            }
+//            else
+//            {
+//                self.chessArr = [
+//                    [0,0,0,0,0,0],
+//                    [0,2,0,0,2,0],
+//                    [0,0,0,0,0,0],
+//                    [1,1,1,1,1,1],
+//                    [1,1,1,1,1,1],
+//                    [1,1,1,1,1,1]
+//                ]
+//            }
+//            
+//            self.chessBoard.setNeedsDisplay()
             
         }
         
@@ -314,8 +325,6 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
         
         var countb = 0
         var countpq = 0
-        
-        
         
         for row in 0 ... 5
         {
