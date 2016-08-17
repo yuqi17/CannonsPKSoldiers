@@ -14,11 +14,11 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
     
     //用来记录每次棋子变动的位置
     private var chessArr:[[Int]] = [
-        [1,1,1,1,1,1],
-        [1,1,1,1,1,1],
-        [1,1,1,1,1,1],
         [0,0,0,0,0,0],
-        [0,2,0,0,2,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
         [0,0,0,0,0,0]
     ]
     
@@ -34,41 +34,56 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
     private var player:Player?
     
     
+    @IBOutlet weak var networkBusyView: UIActivityIndicatorView!
     
     @IBOutlet weak var chessBoard: ChessBoradView!
+    
+    // MARK: turn 变化了可以 用kvo 来通知 label 更新显示该谁走了
+    
+    // MARK: 胜负记录 可以用NSUSERDEFAULT
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chessBoard.delegate = self
+         chessBoard.delegate = self
         
-        
-        ws.event.open = {
-            print("连接服务器成功!!")
-        }
+        self.networkBusyView.startAnimating()
+//        ws.event.open = {
+//            self.networkBusyView.stopAnimating()
+//        }
         
         ws.event.close = { (code, reason, clean) in
-            print("服务器已经关闭")
+                        let alert = UIAlertController(title: "消息:", message: "服务器已经关闭", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "确定", style:UIAlertActionStyle.Default, handler: {action in
+                self.networkBusyView.stopAnimating()
+            })
+            alert.addAction(okAction)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         ws.event.error = { error in
-            print("错误: \(error)")
+            
+            let alert = UIAlertController(title: "消息:", message: "服务器响应错误", preferredStyle: .Alert)
+                                          
+            let okAction = UIAlertAction(title: "确定", style:UIAlertActionStyle.Default, handler:{action in
+                self.networkBusyView.stopAnimating()
+            })
+            alert.addAction(okAction)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         ws.event.message = onMessage
-        
         
     }
     
     func onMessage(data:Any){
         
+        networkBusyView.stopAnimating()
+
         
         let string = data as! String
         
-        //String 转 NSData
-        //let nsdata = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-        //let json = JSON(data: nsdata!)
-        
+//        self.chessBoard.transform
         
         let firstNew = Player(json: string)
         if(player == nil)
@@ -76,6 +91,33 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
             //身份已经确定
             player = firstNew
             
+            if(player?.prole == Role.Cannon.rawValue)
+            {
+                self.chessArr = [
+                    [1,1,1,1,1,1],
+                    [1,1,1,1,1,1],
+                    [1,1,1,1,1,1],
+                    [0,0,0,0,0,0],
+                    [0,2,0,0,2,0],
+                    [0,0,0,0,0,0]
+                ]
+
+            }
+            else{
+                self.chessArr = [
+                    [0,0,0,0,0,0],
+                    [0,2,0,0,2,0],
+                    [0,0,0,0,0,0],
+                    [1,1,1,1,1,1],
+                    [1,1,1,1,1,1],
+                    [1,1,1,1,1,1]
+                ]
+
+            }
+            
+           
+            self.chessBoard.setNeedsDisplay()
+
         }
         else
         {
@@ -86,28 +128,22 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
             player?.turn = firstNew.turn
             player?.status = firstNew.status
         }
+        
         print(string)
         
-        //下棋状态
-        if player?.status == 2 {
-            
-            if player?.turn == Role.Cannon.rawValue {
-                chessArr[(player?.ox)!][(player?.oy)!] = 0
-                chessArr[(player?.nx)!][(player?.ny)!] = Role.Soldier.rawValue
-            }
-            else if player?.turn == Role.Soldier.rawValue
-            {
-                chessArr[(player?.ox)!][(player?.oy)!] = 0
-                chessArr[(player?.nx)!][(player?.ny)!] = Role.Cannon.rawValue
-            }
-            
-            self.chessBoard.setNeedsDisplay()
-        }
-        else if player?.status == 3 //已经确定输赢
-        {
-            showMessage(checkWhoWin() == player!.prole)
-        }
+        let boundsLen = self.chessArr.count - 1
         
+        switch player!.status
+        {
+        case 2://下棋中
+            chessArr[boundsLen - player!.ox][boundsLen - player!.oy] = 0
+            chessArr[boundsLen - player!.nx][boundsLen - player!.ny] = (player!.turn == Role.Cannon.rawValue ? Role.Soldier.rawValue : Role.Cannon.rawValue)
+            self.chessBoard.setNeedsDisplay()
+        case 3://输赢已经确定
+            showMessage(player!.whoWin)
+        default:
+            break
+        }
         
         
     }
@@ -135,7 +171,6 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
             if chessArr[row][column] ==  player?.turn//已经被选中
             {
                 lastStep = (row,column)
-                //print("\(row):\(column) ---> \(chessArr[row][column])")
                 step = 1
             }
             
@@ -153,7 +188,7 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
             let drow    = row - lastStep.0
             let dcolumn = column - lastStep.1
             
-            let distance = sqrt(Double(drow*drow + dcolumn*dcolumn))
+            let distance = sqrt(Double(drow * drow + dcolumn * dcolumn))
             
             
             if player?.prole == Role.Soldier.rawValue {
@@ -178,7 +213,7 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
                 player?.oy = lastStep.1
                 player?.nx = row
                 player?.ny = column
-                
+                player?.status = 2
                 player?.turn = Role.Cannon.rawValue
                 
                 ws.send(text: (player?.toJsonString())!)
@@ -243,83 +278,71 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
                 player?.oy = lastStep.1
                 player?.nx = row
                 player?.ny = column
-                
+                player?.status = 2
                 player?.turn = Role.Soldier.rawValue
                 
                 ws.send(text: (player?.toJsonString())!)
+                networkBusyView.startAnimating()
             }//
             
             
             self.chessBoard.setNeedsDisplay()
             
-            handleResult()
-            
+            let whoWin = checkWhoWin()
+
+            showMessage(whoWin)
         }
         
         
     }
     
     
-    private func handleResult(){
+    private func showMessage(whoWin:Int){
         
         //网络发送
-        if checkWhoWin() != -1 {
+            if whoWin != -1 {
             
-            player?.myWin = (checkWhoWin() == player!.prole)
+            let title = "消息:"
             
-            if player!.myWin {
-                player?.status = 3
-                player?.turn = Role.Soldier.rawValue
-                ws.send(text: player!.toJsonString())
+
+            if(whoWin == player!.prole)
+            {
+                self.networkBusyView.stopAnimating()
+                let message = "你赢了"
+                
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+                
+                let okAction = UIAlertAction(title: "确 定", style: UIAlertActionStyle.Default) {
+                    action in
+                    
+                    self.player?.turn = -1
+                    self.player?.status = 3
+                    self.player?.whoWin = whoWin
+                    self.ws.send(text: (self.player?.toJsonString())!)
+                }
+                
+                alert.addAction(okAction)
+                presentViewController(alert, animated: true, completion: nil)
+            }
+            else{
+                let message = "你输了"
+                
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+                
+                let okAction = UIAlertAction(title: "确 定", style: UIAlertActionStyle.Default) {
+                    action in
+                }
+                
+                alert.addAction(okAction)
+                presentViewController(alert, animated: true, completion: nil)
             }
             
-            showMessage(player!.myWin)
         }
         
         
     }
     
-    private func showMessage(isWin:Bool){
-        let title = "消息:"
-        let message = isWin  ? "你赢了" : "你输了"
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        
-        let okAction = UIAlertAction(title: "确 定", style: UIAlertActionStyle.Default) {
-            action in
-            
-//            if self.checkWhoWin() == Role.Cannon.rawValue
-//            {
-//                self.chessArr = [
-//                    [1,1,1,1,1,1],
-//                    [1,1,1,1,1,1],
-//                    [1,1,1,1,1,1],
-//                    [0,0,0,0,0,0],
-//                    [0,2,0,0,2,0],
-//                    [0,0,0,0,0,0]
-//                ]
-//                
-//            }
-//            else
-//            {
-//                self.chessArr = [
-//                    [0,0,0,0,0,0],
-//                    [0,2,0,0,2,0],
-//                    [0,0,0,0,0,0],
-//                    [1,1,1,1,1,1],
-//                    [1,1,1,1,1,1],
-//                    [1,1,1,1,1,1]
-//                ]
-//            }
-//            
-//            self.chessBoard.setNeedsDisplay()
-            
-        }
-        
-        alert.addAction(okAction)
-        
-        presentViewController(alert, animated: true, completion: nil)
-    }
+    
     
     private func checkWhoWin() -> Int{
         
@@ -377,9 +400,6 @@ class ChessViewController: UIViewController,ChessBoradViewDelegate {
         //其他情况,人工决定
         return -1
     }
-    
-    
-    
     
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YWB-OL-QMm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YWB-OL-QMm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,25 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-u1-hkp" customClass="ChessBoradView" customModule="CannonsPKSoldiers" customModuleProvider="target">
-                                <rect key="frame" x="20" y="26" width="560" height="345"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-u1-hkp" customClass="ChessBoradView" customModule="CannonsPKSoldiers" customModuleProvider="target">
+                                <rect key="frame" x="20" y="28" width="560" height="345"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="XbJ-91-F6n" appends="YES" id="3tb-gV-bjj"/>
                                 </connections>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4vZ-fq-wB5">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="XfC-u1-hkp" secondAttribute="trailing" id="Nme-IW-ek8"/>
-                            <constraint firstItem="XfC-u1-hkp" firstAttribute="top" secondItem="Sbl-8B-egP" secondAttribute="bottom" constant="6" id="ORo-XD-DNr"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="XfC-u1-hkp" secondAttribute="leading" id="ZPZ-D0-TR4"/>
-                            <constraint firstItem="0Ac-id-ATP" firstAttribute="top" relation="lessThanOrEqual" secondItem="XfC-u1-hkp" secondAttribute="bottom" constant="229" id="zSF-wd-gHP"/>
+                            <constraint firstItem="XfC-u1-hkp" firstAttribute="top" secondItem="Sbl-8B-egP" secondAttribute="bottom" constant="8" symbolic="YES" id="P4R-Wa-EY7"/>
+                            <constraint firstItem="4vZ-fq-wB5" firstAttribute="centerY" secondItem="OtT-3P-Y1S" secondAttribute="centerY" id="TyQ-KK-L4M"/>
+                            <constraint firstItem="0Ac-id-ATP" firstAttribute="top" secondItem="XfC-u1-hkp" secondAttribute="bottom" constant="227" id="biQ-pb-NWK"/>
+                            <constraint firstItem="4vZ-fq-wB5" firstAttribute="centerX" secondItem="XfC-u1-hkp" secondAttribute="centerX" id="cMt-75-BjR"/>
+                            <constraint firstItem="XfC-u1-hkp" firstAttribute="leading" secondItem="OtT-3P-Y1S" secondAttribute="leadingMargin" id="gw8-GW-vK7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XfC-u1-hkp" secondAttribute="trailing" id="xF7-jh-3aq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="chessBoard" destination="XfC-u1-hkp" id="dZz-79-sIs"/>
+                        <outlet property="networkBusyView" destination="4vZ-fq-wB5" id="RtP-AF-ECn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYm-z3-qTW" sceneMemberID="firstResponder"/>

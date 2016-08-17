@@ -36,6 +36,8 @@ class ChessBoradView: UIView {
     
     override func drawRect(rect: CGRect) {
         
+        var arr =  delegate!.refresh()
+        
         //绘制棋盘
         let path = UIBezierPath()
         UIColor.blackColor().setStroke()
@@ -61,7 +63,6 @@ class ChessBoradView: UIView {
             subView.removeFromSuperview()
         }
         
-        var arr =  delegate!.refresh()
         
         let d = distance / 3
         let offset = d / 2

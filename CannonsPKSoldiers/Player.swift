@@ -30,7 +30,7 @@ class Player :EVObject{
     var turn = Role.Soldier.rawValue
     
     
-    var myWin:Bool = false
+    var whoWin:Int = -1
 
     //棋子类型
     var type:Int = Role.Soldier.rawValue
