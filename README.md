@@ -1,7 +1,7 @@
 #项目名:CannonsPKSoldiers 
 此项目是一个由swift 编写的iOS 棋类游戏.可以在ipad 和 iPhone上玩.由于后来加入了   
 *websocket 功能*,可以在服务器开启的情况,网上对战.编写此项目的目的是为了检验自己    
-对swift 和 iOS 开发的掌握情况.也希望对初学的朋友又所帮助.   
+对swift 和 iOS 开发的掌握情况.也希望对初学的朋友有所帮助.   
 
 #注意:  
 1.此项目采用的是xcode 7 和 swift 2.2   
