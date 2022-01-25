@@ -11,4 +11,4 @@
 [EVReflection](https://github.com/evermeer/EVReflection.git) 
 请自行克隆,配置  
 3.服务器代码地址:   
-[CannonsPKSoldiers-server](https://github.com/yuqi17/CannonsPKSoldiers-server.git)  
+[CannonsPKSoldiers-server](https://github.com/webjoin/CannonsPKSoldiers-server)  
